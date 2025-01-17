@@ -244,6 +244,21 @@ final class App {
 
 }
 
+func testTodoDescriptionWithCompleteIcon() {
+    // Given
+    var todo = Todo(title: "Test Complete Todo")
+    todo.isCompleted = true // Set the todo to completed
+    
+    // When
+    let description = todo.description
+    
+    // Then
+    assert(description == "Test Complete Todo - ✅", "The description should indicate that the todo is complete.")
+    print("testTodoDescriptionWithCompleteIcon passed")
+}
+
+testTodoDescriptionWithCompleteIcon()
+
 
 // TODO: Write code to set up and run the app.
 let jsonCache = JSONFileManagerCache(fileName: "/workspace/todos.json")
